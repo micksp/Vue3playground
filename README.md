@@ -11,6 +11,7 @@ npm install
 ```
 npm run serve
 ```
+Vue dev server has extra config: `disableHostCheck: true` - because we are running inside a container.
 
 ### Compiles and minifies for production
 ```
