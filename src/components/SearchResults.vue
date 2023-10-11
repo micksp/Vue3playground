@@ -7,23 +7,12 @@
     </table>
 </template>
 
-<script>
+<script setup>
 import { computed } from 'vue';
-import titles from '/data.json';
-export default {
-    props: {
-        query: {
-            type: String,
-            default: ''
-        }
-    },
-    setup (props, context) {
-        const filteredTitles = computed(() => {
-            return titles.filter(s => s.Name.toLowerCase().includes(props.query.toLowerCase()));
-        });
-        return {
-            filteredTitles
-        };
-    }    
-}
+import useData from "../composables/useData";
+const data = useData();
+defineProps(['query']);
+const filteredTitles = computed(() => {
+    return titles.filter(s => s.Name.toLowerCase().includes(props.query.toLowerCase()));
+});
 </script>
