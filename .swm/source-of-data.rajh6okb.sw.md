@@ -57,7 +57,7 @@ get the data any way you want and expose it for users (usually you would want th
 1      import titles from '/data.json';
 2      
 3      export default function useData() {
-4          return { data };
+4          return { titles };
 5      }
 ```
 
