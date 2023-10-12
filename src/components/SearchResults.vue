@@ -1,18 +1,21 @@
 <template>
-    <h1>Zoekresultaten</h1>
-    <table>
-        <tr v-for="title in filteredTitles">
-            <td>{{ title.Name }}</td>
-        </tr>
-    </table>
+    <h2>Zoekresultaten</h2>
+    <p>Er zijn {{ filteredTitles.length }} titels gevonden.</p>
+    <ul>
+        <li v-for="title in filteredTitles">
+            {{ title.Name }}
+        </li>
+    </ul>
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import useData from "../composables/useData";
-const data = useData();
-defineProps(['query']);
-const filteredTitles = computed(() => {
-    return titles.filter(s => s.Name.toLowerCase().includes(props.query.toLowerCase()));
-});
+const { filteredTitles } = useData();
 </script>
+
+<style scoped>
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+</style>
