@@ -1,7 +1,9 @@
 <template>
     <h2>Zoekresultaten</h2>
     <p>Er zijn {{ filteredTitles.length }} titels gevonden.</p>
-    <table class="table">
+    <table
+        v-if="filteredTitles.length > 0"
+        class="table">
         <thead>
             <tr>
                 <th>Titel</th>
@@ -38,5 +40,13 @@ const { filteredTitles } = useData();
     vertical-align: top;
     border-top: 1px solid #dee2e6;
     text-align: left;
+}
+h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    background-color: cadetblue;
+    color: white;
 }
 </style>

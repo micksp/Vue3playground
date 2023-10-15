@@ -1,5 +1,5 @@
 <template>
-    <h1>Filter 'learn Vue' Articles</h1>
+    <h1>Filter 'learn Vue' resources</h1>
     <input
       type='text'
       placeholder='Filter Titles'
